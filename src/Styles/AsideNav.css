@@ -1,0 +1,44 @@
+ .aside-nav {
+    display: flex;
+ }
+ 
+ .ad-container{
+  background-color: #000000e3;
+  display: flex;
+  flex-direction: column;
+  width: 18%;
+  height: 100vh;
+ }
+
+ .mn-title {
+  text-align: center;
+  color: #fafafafa;
+  font-size: 30px;
+  margin: 10px;
+ }
+
+ .mn-list a, li{
+    display: block;
+  text-decoration: none;
+  list-style: none;
+  font-size: 16px;
+  margin-bottom: 10px;
+ }
+
+ .mn-list a:nth-child(1){
+  color: #fafafafa;
+  transition: 900ms ease;
+ }
+
+ .mn-list a:nth-child(1):hover {
+  margin-left: 10px;
+ }
+
+ .mn-list a:nth-child(2){
+    color: #fafafafa;
+    transition: 900ms ease;
+   }
+  
+   .mn-list a:nth-child(2):hover {
+    margin-left: 10px;
+   }

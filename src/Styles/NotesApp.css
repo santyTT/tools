@@ -1,0 +1,267 @@
+.mn-container-notes {
+    height: 90vh;
+    margin: 26px;
+    border-radius: 15px;
+    background-color: #f59c37c4;
+    color: #000000fa;
+    padding: 10px;
+    width: 173vh;
+    overflow-y: auto;
+}
+
+.mn-container {
+    width: 110%;
+} 
+
+.mn-container-notes h2 {
+    margin-left: 31px;
+    display: flex;
+}
+
+.mn-container-notes h2::after {
+    content: 'click to "+" to add a new note';
+    position: relative; /* o fixed */
+    top: 48%; /* Mueve al 50% de la altura del contenedor padre */
+    left: 5%; /* Mueve al 50% del ancho del contenedor padre */
+    transform: translate(-10%, 20%);
+    font-size: 20px;
+    color: #383532;
+
+    animation: alertAdd 10s linear alternate-reverse both;
+}
+
+@keyframes alertAdd {
+    0% {
+        opacity: 0;
+    }
+    30% {
+       opacity: 1;
+
+    }
+    60% {
+        opacity: 0;
+
+    }
+    70% {
+        opacity: 1;
+
+    }
+    80% {
+        opacity: 0;
+
+    }
+    90% {
+        opacity: 1;
+
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+
+.mn-container-notes::-webkit-scrollbar {
+  display: none;
+}
+
+.nv-target {
+  display: flex;
+  justify-content: space-between;
+  background-color: #383532;
+  padding: 0 5px;
+  border-radius: 10px 10px 0 0;
+}
+
+.box-text-content {
+    z-index: 1000;
+  max-width: 321px;
+  width: 221px;
+  transition: 500ms;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+ .box-text-content {
+    margin-bottom: 10px;
+}
+
+.add-bt {
+    border: none;
+    font-size: 43px;
+    left: 18%;
+    background-color: #fff;
+    border-radius: 100px;
+    height: 8vh;
+    width: 8vh;
+    top: 1%;
+    cursor: pointer;
+    transition: 800ms ease;
+}
+
+.nv-target-name {
+    font-size: 14px;
+    padding: 3px;
+    color: #fff;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.accions-bt-nav {
+  display: flex;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.accions-bt-nav button:nth-child(1) {
+  margin-left: 2px;
+  border-radius: 100px;
+  height: 14px;
+  border:1px solid yellow;
+  background-color: yellow;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.accions-bt-nav button:nth-child(2) {
+  color: black;
+  margin-left: 2px;
+  border-radius: 100px;
+  height: 14px;
+  border:1px solid rgb(21, 255, 0);
+  background-color: rgb(21, 255, 0);
+  cursor: pointer;
+  margin-left: 5px;
+}
+.accions-bt-nav button:nth-child(3) {
+    margin-left: 2px;
+    border-radius: 100px;
+    height: 14px;
+    max-width: 100%;
+    border:1px solid rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0);
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.close::after {
+    content: 'delete';
+    font-size: 10px;
+    background-color: rgba(0, 0, 0, 0.76);
+    color: #fff;
+    transform: translateY(-20px);
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+    position: absolute;
+    visibility: hidden;
+    transition: 500ms;
+    transition-delay: 100ms;
+
+    animation: alert-tip-R 1s forwards;
+}
+.close:hover::after {
+    visibility: visible;
+    transition: 100ms;
+    transition-delay: 2s;
+    animation: alert-tip 1s forwards;   
+    animation-delay: 2s;
+}
+
+@keyframes alert-tip {
+    0% {
+        font-size: 0px;
+    }
+    100% {
+        font-size: 9px;
+    }
+    
+}
+
+@keyframes alert-tip-R {
+    0% {
+        font-size: 9px;
+    }
+    100% {
+        font-size: 0px;
+    }
+    
+}
+
+.note {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .note-exit {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeOut 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+
+
+.text-target {
+    padding: 10px;
+    font-size: 18px;
+    font-family: cursive;
+    max-width: 201px;
+    width: 201px;
+    height: 30vh;
+    border-radius: 0 0 10px 10px;
+    max-height: 1%;
+    border: none;
+    resize: none;
+    transition: 1s;
+}
+.text-target:focus {
+    width: 201px;
+    height: 30vh;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 0;
+    outline: none;
+    transition: 1s ease-in-out;
+}
+
+.text-target::-webkit-scrollbar {
+    display: none;
+}
